@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #F4F5F5 !important;
+}
+
+.bg-inverse {
+  background-color: #2b303e!important;
+}
+
+img { 
+  transition: all .2s ease-in-out;
+}
+
+img:hover { 
+  transform: scale(1.1); 
+}
+
+.img-style {
+  width: 5rem;
+}
+
+video {
+  width: 240px;
+  height: 240px;
+}

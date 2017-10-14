@@ -1,0 +1,18 @@
+<div class="container main">
+  <div class="container-center">
+    <span class="stream-round">
+      <amexio-image [imagePath]="'./assets/images/stream.svg'" [cClass]="'img-style'" [tooltipMessage]="'Click Here'" (click)="stream()"></amexio-image>
+    </span>
+  </div>
+  <div class="container-center">
+    <span class="arrows"></span>
+  </div>
+  <div class="container-center">
+    <span class="avatar-round">
+      <amexio-image [imagePath]="'./assets/images/avatar.svg'" [cClass]="'img-style'" [tooltipMessage]="'Image'"></amexio-image>
+    </span>
+  </div>
+  <span class="container-video">
+    <ack-webcam [(ref)]="webcam" [options]="options" (onSuccess)="onCamSuccess($event)" (onError)="onCamError($event)"></ack-webcam>
+  </span>
+</div>

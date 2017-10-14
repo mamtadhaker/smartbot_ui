@@ -1,0 +1,15 @@
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.logo {
+  width: 75px;
+}
+
+.container-fluid {
+  width: 75%;
+}
