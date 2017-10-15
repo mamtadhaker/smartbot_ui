@@ -29,3 +29,8 @@ body {
   left: -50%;
   top: -20%;
 }
+
+.chatbot-input input {
+  border: 0;
+  height: 55px;
+}

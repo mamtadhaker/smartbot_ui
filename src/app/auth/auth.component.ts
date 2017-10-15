@@ -30,11 +30,12 @@ export class AuthComponent implements OnInit {
     this.setIsCam();
   }
 
-  onCamSuccess(): void {
+  onCamSuccess(event): void {
+    console.log('here --------------');
     // TODO:
   }
 
-  onCamError(error): void {
+  onCamError(event): void {
     // TODO:
   }
 
@@ -54,8 +55,8 @@ export class AuthComponent implements OnInit {
 
   private submit(body: any): void {
     const config = {
-      method: 'post',
-      url: 'http://www.aviorsciences.com/',
+      method: 'POST',
+      url: '',
       body: body
     };
 

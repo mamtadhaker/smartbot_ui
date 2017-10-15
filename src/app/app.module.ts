@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+import { OrderModule } from './order/order.module';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' }
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true }
     ),
-    AuthModule
+    AuthModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
