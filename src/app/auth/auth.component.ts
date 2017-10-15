@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Request } from '@angular/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -22,7 +23,7 @@ export class AuthComponent implements OnInit {
     cameraType: 'front' || 'back'
   };
 
-  constructor(public http: Http) { }
+  constructor(public http: Http, public router: Router) { }
 
   ngOnInit() { }
 
@@ -41,6 +42,7 @@ export class AuthComponent implements OnInit {
 
   private setIsCam(): void {
     this.isCam = true;
+    this.order();
   }
 
   private resetIsCam(): void {
@@ -63,5 +65,14 @@ export class AuthComponent implements OnInit {
     const request = new Request(config);
 
     this.http.request(request);
+  }
+
+  private async order(): Promise<any> {
+    await this.delay(6000);
+    this.router.navigate(['/order']);
+  }
+
+  private delay(ms: Number = 0): Promise<any> {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
