@@ -6,19 +6,26 @@ body {
   background-color: #2b303e!important;
 }
 
-img { 
+.stream-img {
+  width: 4rem;
   transition: all .2s ease-in-out;
 }
 
-img:hover { 
-  transform: scale(1.1); 
+.stream-img:hover {
+  transform: scale(1.25);
 }
 
-.img-style {
-  width: 5rem;
+.avatar-img {
+  width: 10rem;
+  transition: all .2s ease-in-out;
 }
 
-video {
-  width: 240px;
-  height: 240px;
+.avatar-img:hover {
+  transform: scale(1.1);
+}
+
+#video {
+  position: absolute;
+  left: -50%;
+  top: -20%;
 }

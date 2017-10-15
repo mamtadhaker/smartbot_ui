@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Request } from '@angular/http';
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +8,59 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
+  isCam: Boolean = false;
+  webcam: any;
+
+  options: object = {
+    audio: false,
+    video: true,
+    width: 480,
+    height: 320,
+    fallbackMode: 'callback',
+    fallbackSrc: 'jscam_canvas_only.swf',
+    fallbackQuality: 85,
+    cameraType: 'front' || 'back'
+  };
+
+  constructor(public http: Http) { }
+
   ngOnInit() { }
 
-  stream() {
-    console.log('clicked');
+  stream(): void {
+    this.setIsCam();
+  }
+
+  onCamSuccess(): void {
+    // TODO:
+  }
+
+  onCamError(error): void {
+    // TODO:
+  }
+
+  private setIsCam(): void {
+    this.isCam = true;
+  }
+
+  private resetIsCam(): void {
+    this.isCam = false;
+  }
+
+  private capture(): any {
+    this.webcam.captureAsFormData({ fileName: 'file.jpg' })
+      .then(formData => this.submit(formData))
+      .catch(e => console.error(e));
+  }
+
+  private submit(body: any): void {
+    const config = {
+      method: 'post',
+      url: 'http://www.aviorsciences.com/',
+      body: body
+    };
+
+    const request = new Request(config);
+
+    this.http.request(request);
   }
 }

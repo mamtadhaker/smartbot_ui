@@ -6,19 +6,19 @@
   text-align: center;
 }
 
-.avatar-round, .stream-round {
-  cursor: pointer;
+.stream-round, .avatar-round {
   display: inline-block;
   border: .15rem solid;
   border-radius: 50%;
 }
 
-.avatar-round {
-  padding: 1rem 1.5rem 2rem 1.5rem
+.stream-round {
+  cursor: pointer;
+  padding: 1rem;
 }
 
-.stream-round {
-  padding: 1.5rem;
+.avatar-round {
+  padding: 2rem 2.5rem 3rem 2.5rem
 }
 
 .arrows {
@@ -74,5 +74,10 @@
 }
 
 .container-video {
+  width: 15rem;
+  height: 15rem;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
   display: inline-block;
 }
