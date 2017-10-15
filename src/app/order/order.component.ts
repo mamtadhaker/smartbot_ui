@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { ApiAiClient } from 'api-ai-javascript';
+import { ApiAiClient } from 'api-ai-javascript';
 
 const micResetTime: Number = 6000;
 
@@ -15,10 +15,10 @@ export class OrderComponent implements OnInit {
   ngOnInit() { }
 
   constructor() {
-    // new ApiAiClient({ accessToken: 'c117a80dccea4377a049d7a6ebf8365b' })
-    //   .textRequest('Hello')
-    //   .then((response) => { console.log(response); })
-    //   .catch((error) => { console.log(error); });
+    new ApiAiClient({ accessToken: 'b81e48c28d6c49729b3458373533a908' })
+      .textRequest('Hello')
+      .then((response) => { console.log(response); })
+      .catch((error) => { console.log(error); });
   }
 
   startMic(event: Event): void {
