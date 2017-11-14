@@ -11,6 +11,7 @@ export class AuthComponent implements OnInit {
 
   isCam: Boolean = false;
   webcam: any;
+  messages: object[] = [];
 
   options: object = {
     audio: false,
@@ -32,7 +33,6 @@ export class AuthComponent implements OnInit {
   }
 
   onCamSuccess(event): void {
-    console.log('here --------------');
     // TODO:
   }
 
