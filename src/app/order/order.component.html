@@ -7,25 +7,22 @@
           <img class="logo" src="../assets/images/smartbot.svg" alt="smartbot"> Smartbot
         </a>
       </div>
-      <div class="chatbot-chat">
+      <div class="chatbot-chat" id="result-wrapper" #resultWraper>
         <table class="chat-table">
           <tbody>
             <tr>
               <td class="chat">
-                <!-- TODO: -->
-                <div class="user-request">lkdlc</div>
-                <div class="server-response">What was that?</div>
-                <!-- END -->
+                <div [ngClass]="message.type" *ngFor="let message of conversation">{{message.text}}</div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="chatbot-input">
-        <amexio-text-input name="name" [placeholder]="'Ask something...'" [iconFeedBack]="false" [hasLabel]="false">
-        </amexio-text-input>
+        <input id="chatbot-input" [(ngModel)]="query" #speech [placeholder]="'Ask something...'" (keyup.enter)="chatbot(speech.value)"
+          (click)="chatbot(speech.value)">
         <span class="mic">
-          <i [class.active]="isMicActive" class="fa fa-microphone fa-lg" aria-hidden="true" (click)="startMic($event)"></i>
+          <i id="chatbot-mic" class="fa fa-microphone fa-lg" aria-hidden="true" (click)="microphone()"></i>
         </span>
       </div>
     </div>

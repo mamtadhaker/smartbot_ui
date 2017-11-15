@@ -47,12 +47,21 @@
   width: 100%;
 }
 
+.chatbot-input input {
+  width: 100%;
+  padding: .375rem 3rem .375rem .75rem;
+  border: 0;
+  height: 3.5rem;
+  line-height: 1.5rem;
+  color: #495057;
+}
+
 .chatbot-input .fa-microphone {
   position: absolute;
   cursor: pointer;
   color: #99D2DA;
   right: 17.5px;
-  top: 15px;
+  top: 20px;
 }
 
 .chatbot-input .fa-microphone.active {
@@ -69,7 +78,7 @@
   vertical-align: bottom;
 }
 
-.chat .user-request {
+.chat .request {
   padding: 15px 25px;
   border-radius: 3px;
   border: 1px solid #eee;
@@ -83,7 +92,7 @@
   margin-left: 15px;
 }
 
-.chat .server-response {
+.chat .response {
   padding: 15px 25px;
   border-radius: 3px;
   border: 1px solid #eee;

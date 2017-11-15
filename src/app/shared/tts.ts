@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { speechConfig } from './constants';
+import { ttsConfig } from './constants';
 
 @Injectable()
 export class TTS {
-  speechSynthesis: SpeechSynthesis;
-  voice: SpeechSynthesisVoice;
-  utterance: SpeechSynthesisUtterance;
+  private speechSynthesis: SpeechSynthesis;
+  private voice: SpeechSynthesisVoice;
+  private utterance: SpeechSynthesisUtterance;
 
   constructor() {
     this.speechSynthesis = window.speechSynthesis;
     this.voice = window.speechSynthesis.getVoices()
-      .find(v => v.lang === speechConfig.lang);
+      .find(v => v.lang === ttsConfig.lang);
   }
 
   speak(text: string): void {
@@ -21,7 +21,7 @@ export class TTS {
 
   private config(): void {
     this.utterance.voice = this.voice;
-    this.utterance.pitch = speechConfig.pitch;
-    this.utterance.rate = speechConfig.rate;
+    this.utterance.pitch = ttsConfig.pitch;
+    this.utterance.rate = ttsConfig.rate;
   }
 }
