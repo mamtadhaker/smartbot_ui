@@ -78,8 +78,10 @@ export class OrderComponent implements OnInit, AfterViewInit {
   }
 
   private handleResponse(response: IServerResponse): void {
-    const message = { type: 'response', text: response.result.fulfillment.speech };
+    const text = response.result.fulfillment.speech;
+    const message = { type: 'response', text: text };
     this.conversation.push(message);
+    this.synth.speak(text);
     this.query = '';
   }
 
