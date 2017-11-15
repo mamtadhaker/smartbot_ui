@@ -3,7 +3,7 @@ import { ApiAiClient, ApiAiConstants, IRequestOptions, IServerResponse } from 'a
 import * as $ from 'jquery';
 import { TTS } from '../shared/tts';
 import { STT, SpeechRecognitionEvent } from '../shared/stt';
-import { Response } from '@angular/http/src/static_response';
+import { accessToken } from '../shared/constants';
 
 let recognition: Boolean = false;
 @Component({
@@ -22,7 +22,7 @@ export class OrderComponent implements OnInit, AfterViewInit {
   constructor(public synth: TTS, public recog: STT) {
     this.conversation = [];
     this.query = '';
-    this.client = new ApiAiClient({ accessToken: '80b5717cf56448bdadbdf1e24d49e421' });
+    this.client = new ApiAiClient({ accessToken: accessToken });
   }
 
   ngOnInit() {
