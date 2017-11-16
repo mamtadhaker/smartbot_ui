@@ -6,8 +6,27 @@
   font-size: 1.5rem;
 }
 
+.navbar-header {
+  width: 90%;
+}
+
 .navbar-brand img {
   margin-right: .5rem;
+}
+
+.navbar-user {
+  margin-top: 1.5rem;
+  float: right;
+}
+
+.navbar-user a {
+  font-size: 1rem;
+}
+
+.navbar-user .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
 }
 
 .logo {

@@ -24,7 +24,7 @@ body {
   transform: scale(1.1);
 }
 
-#video {
+#video, #canvas {
   position: absolute;
   left: -50%;
   top: -20%;
