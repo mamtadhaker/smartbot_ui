@@ -4,6 +4,7 @@ import * as $ from 'jquery';
 import { TTS } from '../shared/tts';
 import { STT, SpeechRecognitionEvent } from '../shared/stt';
 import { accessToken } from '../shared/constants';
+import { AppService } from '../app.service';
 
 let recognition: Boolean = false;
 @Component({
@@ -19,7 +20,7 @@ export class OrderComponent implements OnInit, AfterViewInit {
   conversation: object[];
   @Input() query: string;
 
-  constructor(public synth: TTS, public recog: STT) {
+  constructor(public appService: AppService, public synth: TTS, public recog: STT) {
     this.conversation = [];
     this.query = '';
     this.client = new ApiAiClient({ accessToken: accessToken });
@@ -54,6 +55,8 @@ export class OrderComponent implements OnInit, AfterViewInit {
     this.results.changes.subscribe(t => {
       this.scrollResultWrapperToBottom();
     });
+
+    this.appService.authenticate(true);
   }
 
   microphone(): void {

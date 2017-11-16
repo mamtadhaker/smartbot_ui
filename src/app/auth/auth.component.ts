@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http, Request } from '@angular/http';
 import { Router } from '@angular/router';
 import { delay } from 'q';
+
+import { AppService } from '../app.service';
 
 declare var tracking: any;
 let video: any;
@@ -12,16 +14,20 @@ let context: any;
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent implements OnInit, AfterViewInit {
 
   isCam: Boolean = false;
   isFace: Boolean = false;
   dataUrl = '';
   tracker: any;
 
-  constructor(public http: Http, public router: Router) { }
+  constructor(public http: Http, public router: Router, public appService: AppService) { }
 
   ngOnInit() { }
+
+  ngAfterViewInit() {
+    this.appService.authenticate(false);
+  }
 
   stream(): void {
     if (!this.isCam) {
